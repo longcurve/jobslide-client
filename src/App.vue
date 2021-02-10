@@ -1,15 +1,15 @@
 <template>
   <!-- This just loads spreadsheet into the app, the surrounding stuff will be in HTML template -->
-  <Spreadsheet />
+  <Applications />
 </template>
 
 <script>
-import Spreadsheet from './components/Spreadsheet.vue'
+import Applications from './components/Applications.vue'
 
 export default {
   name: 'App',
   components: {
-    Spreadsheet
+    Applications
   }
 }
 </script>
