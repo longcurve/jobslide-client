@@ -4,10 +4,10 @@
         <input type="date" name="date" key="date"/>
         <input type="text" name="position" placeholder="Position" key="position" />
         <input type="text" name="company" placeholder="Company" key="company" />
-        <button name="view_details" v-on:click.left="ViewDetails({})">View Details</button>
+        <button name="view_details" v-on:click.left="viewDetails({})">View Details</button>
       </div>
   </template>
-  <template v-else-if="showdetails">
+  <template v-if="showdetails">
     <br /><input type="text" name="location" placeholder="City, ST" />
     <input type="text" name="contact_first_name" placeholder="John" />
     <input type="text" name="contact_last_name" placeholder="Doe" /><br />
@@ -42,12 +42,8 @@ export default {
     loadApplications() {
 
     },
-    ViewDetails() {
-      if (this.showdetails == true) {
-        this.showdetails = false;
-      } else {
-      this.showdetails = true;
-      }
+    viewDetails() {
+      this.showdetails = !this.showdetails;
     }
   },
   components: {
