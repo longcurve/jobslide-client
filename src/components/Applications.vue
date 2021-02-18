@@ -1,5 +1,5 @@
 <template>
-  <template v-if="show-brief">
+  <template>
       <div class="applications">
         <input type="date" name="date" key="date"/>
         <input type="text" name="position" placeholder="Position" key="position" />
@@ -7,7 +7,7 @@
         <button name="view_details" v-on:click.left="ViewDetails({})">View Details</button>
       </div>
   </template>
-  <template v-else-if="show-details">
+  <template v-else-if="showdetails">
     <br /><input type="text" name="location" placeholder="City, ST" />
     <input type="text" name="contact_first_name" placeholder="John" />
     <input type="text" name="contact_last_name" placeholder="Doe" /><br />
@@ -18,9 +18,8 @@
     </select>
      <select name="application_method">
       <option name="resume" value="Resume" />
-      <option name="application" value="Application" /><br />
-      
-    </select>
+      <option name="application" value="Application" />
+    </select><br />
   </template>
 </template>
 
@@ -29,6 +28,7 @@
 export default {
   data() {
     return {
+      showdetails: false,
      applications: this.loadApplications()
     };
   },
@@ -43,7 +43,11 @@ export default {
 
     },
     ViewDetails() {
-      this.currentView = "Application-Details";
+      if (this.showdetails == true) {
+        this.showdetails = false;
+      } else {
+      this.showdetails = true;
+      }
     }
   },
   components: {
