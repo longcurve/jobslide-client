@@ -1,10 +1,10 @@
 <template>
-  <template>
+  <template v-if="true">
       <div class="applications">
         <input type="date" name="date" key="date"/>
         <input type="text" name="position" placeholder="Position" key="position" />
         <input type="text" name="company" placeholder="Company" key="company" />
-        <button name="view_details" v-on:click.left="viewDetails({})">View Details</button>
+        <button name="view_details" v-on:click.left="viewDetails({})">{{ showdetails ? 'Hide Details' : 'View Details' }}</button>
       </div>
   </template>
   <template v-if="showdetails">
@@ -20,10 +20,19 @@
       <option name="resume" value="Resume" />
       <option name="application" value="Application" />
     </select><br />
+
   </template>
+  <template>
+    <ModalDialog />
+</template>
 </template>
 
 <script>
+import ModalDialog from './ModalDialog.vue';
+
+const components = {
+  ModalDialog,
+};
 
 export default {
   data() {
@@ -47,7 +56,13 @@ export default {
     }
   },
   components: {
-   
+   ModalDialog
   }
 }
 </script>
+
+<style scoped>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+</style>
