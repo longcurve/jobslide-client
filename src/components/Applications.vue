@@ -19,22 +19,16 @@
      <select name="application_method">
       <option name="resume" value="Resume" />
       <option name="application" value="Application" />
-    </select><br />
+    </select>
+     <button
+      type="button"
+      @click="showInterviewsModal = !showInterviewsModal"
+      class="mx-auto w-full flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+      Interviews
+    </button>
 
   </template>
-  <template>
-    <teleport to="body">
-    <div
-        class="w-1/2 bg-white rounded-lg text-left overflow-hidden shadow-xl"
-        role="dialog"
-        ref="modal"
-        aria-modal="true"
-        aria-labelledby="modal-headline"
-    >
-       Awiwi
-    </div>
-  </teleport>
-</template>
+  <ModalDialog />
 </template>
 
 <script>
