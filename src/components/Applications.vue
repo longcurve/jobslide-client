@@ -23,22 +23,28 @@
 
   </template>
   <template>
-    <ModalDialog />
+    <teleport to="body">
+    <div
+        class="w-1/2 bg-white rounded-lg text-left overflow-hidden shadow-xl"
+        role="dialog"
+        ref="modal"
+        aria-modal="true"
+        aria-labelledby="modal-headline"
+    >
+       Awiwi
+    </div>
+  </teleport>
 </template>
 </template>
 
 <script>
 import ModalDialog from './ModalDialog.vue';
 
-const components = {
-  ModalDialog,
-};
-
 export default {
   data() {
     return {
       showdetails: false,
-     applications: this.loadApplications()
+      applications: this.loadApplications()
     };
   },
   methods: {
