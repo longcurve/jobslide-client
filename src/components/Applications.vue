@@ -1,4 +1,5 @@
 <template>
+  <form name="applications" method="GET">
   <template v-if="true">
       <div class="applications">
         <input type="date" name="date" key="date"/>
@@ -26,8 +27,8 @@
       class="mx-auto w-full flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
       Interviews
     </button>
-
   </template>
+  </form>
   <ModalDialog />
 </template>
 
@@ -49,9 +50,11 @@ export default {
       // Save to local storage
     },
     loadApplications() {
-
+      // Load applications from server
     },
     viewDetails() {
+      // Expand application view to show all details OR collapse application view
+      // to show fewer details
       this.showdetails = !this.showdetails;
     }
   },
@@ -65,4 +68,14 @@ export default {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+select {
+  margin-left: 10px;
+}
+
+input {
+  margin: 5px;
+  max-width: 150px;
+  background-color: silver;
+}
 </style>
