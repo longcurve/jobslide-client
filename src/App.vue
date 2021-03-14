@@ -1,5 +1,7 @@
 <template>
-  <!-- This just loads spreadsheet into the app, the surrounding stuff will be in HTML template -->
+  <!-- The top template of the entire web application. Here is where we build the website
+  overall website design. Embedding Applications List (Applications.vue) and any other
+  application areas as website content. -->
   <Applications />
 </template>
 

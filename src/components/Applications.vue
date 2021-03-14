@@ -5,7 +5,7 @@
         <input type="date" name="date" key="date"/>
         <input type="text" name="position" placeholder="Position" key="position" />
         <input type="text" name="company" placeholder="Company" key="company" />
-        <button name="view_details" v-on:click.left="viewDetails({})">{{ showdetails ? 'Hide Details' : 'View Details' }}</button>
+        <button type="button" name="view_details" v-on:click.left="viewDetails({})">{{ showdetails ? 'Hide Details' : 'View Details' }}</button>
       </div>
   </template>
   <template v-if="showdetails">
@@ -71,11 +71,5 @@ export default {
 
 select {
   margin-left: 10px;
-}
-
-input {
-  margin: 5px;
-  max-width: 150px;
-  background-color: silver;
 }
 </style>
