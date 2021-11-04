@@ -3,21 +3,19 @@
   <template v-if="true">
       <div class="applications">
         <label for="date">Date:</label>
-        <input type="date" name="date" key="date"/><br />
+        <input class ="app_field" type="date" name="date" key="date"/>
         
         <label for="position">Position</label>
-        <input type="text" name="position" placeholder="Position" key="position" /><br />
+        <input class="app_field" type="text" name="position" placeholder="Position" key="position" />
         
         <label for="company">Company</label>
-        <input type="text" name="company" placeholder="Company" key="company" /><br />
-        
-        <button type="button" name="view_details" v-on:click.left="viewDetails({})">{{ showdetails ? 'Hide Details' : 'View Details' }}</button>
+        <input class="app_field" type="text" name="company" placeholder="Company" key="company" /><br />
       </div>
   </template>
   <template v-if="showdetails">
     <br />
-    <label for="CityState">City, State</label>
-    <input type="text" name="location" placeholder="City, ST" /><br />
+    <label for="Location">Location</label>
+    <input type="text" name="location" placeholder="123 Main St. Somewhere, SW" /><br />
     
     <label for="ContactName">Contact Name</label>
     <input type="text" name="contact_first_name" placeholder="John" /><br />
@@ -42,8 +40,10 @@
       @click="showInterviewsModal = !showInterviewsModal"
       class="mx-auto w-full flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
       Interviews
-    </button>
+    </button><br />
+    
   </template>
+  <button type="button" name="view_details" v-on:click.left="viewDetails({})">{{ showdetails ? 'Hide Details' : 'View Details' }}</button>
   </form>
   <ModalDialog />
 </template>
