@@ -6,8 +6,8 @@
   <Applications />
 </template>
 
-<style scoped>
-input['text'] {
+<style>
+input[type="text"] {
   margin: 5px;
 }
 </style>
